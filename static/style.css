@@ -1,0 +1,85 @@
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#fdf6ee;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px;
+    background:#4b2e2e;
+    color:white;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+.hero{
+    text-align:center;
+    padding:120px;
+    background: linear-gradient(rgba(0,0,0,0.4),
+                rgba(0,0,0,0.4)),
+                url("C:\Users\sadhi\OneDrive\Pictures\WhatsApp Image 2026-06-27 at 7.12.52 PM.jpeg");
+    background-size:cover;
+    color:white;
+}
+
+
+button{
+    padding:12px 20px;
+    border:none;
+    cursor:pointer;
+    background:#4b2e2e;
+    color:white;
+    border-radius:5px;
+}
+
+.products{
+    padding:40px;
+    text-align:center;
+}
+
+.card{
+    display:inline-block;
+    width:250px;
+    margin:20px;
+    padding:20px;
+    background:white;
+    box-shadow:0 0 10px gray;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+
+nav ul li{
+    cursor:pointer;
+    transition:0.3s;
+}
+
+nav ul li:hover{
+    color:#d4a373;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#4b2e2e;
+    color:white;
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
