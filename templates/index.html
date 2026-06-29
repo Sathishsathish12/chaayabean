@@ -1,0 +1,62 @@
+{% load static %}
+<head>
+    <title>ChaayaBean</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<nav>
+    <h2>ChaayaBean ☕</h2>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#products">Products</a></li>
+
+        <li><a href="{% url 'cart' %}">Cart</a></li>
+
+        <li><a href="{% url 'my_orders' %}">My Orders</a></li>
+
+        {% if user.is_authenticated %}
+            <li>Hello, {{ user.username }}</li>
+            <li><a href="/logout/">Logout</a></li>
+        {% else %}
+            <li><a href="/login/">Login</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+    <section class="hero">
+        <h1>Fresh Tea & Coffee Everyday</h1>
+        <p>Enjoy premium taste with ChaayaBean</p>
+        <button>Order Now</button>
+    </section>
+
+    <section class="products">
+        <h2>Our Products</h2>
+
+{% for product in products %}
+
+<div class="card">
+
+    {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    {% endif %}
+
+    <h3>{{ product.name }}</h3>
+    <p>₹{{ product.price }}</p>
+    <p>{{ product.description }}</p>
+
+    <a href="{% url 'add_to_cart' product.id %}">
+       <button>Add to Cart</button>
+    </a>
+
+</div>
+
+{% endfor %}
+    </section>
+<footer>
+    <p>© 2026 ChaayaBean | Made with Rajesh</p>
+</footer>
+
+</body>
+
